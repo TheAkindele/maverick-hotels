@@ -1,0 +1,22 @@
+            CSS, SCSS, React-Bootstrap and Bootstrap
+
+                CSS/SCSS MEdiaQuery
+Below are some standard breaking points for CSS media query
+
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {...}
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {...}
+
+    /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {...}
+
+    /* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {...}
+
+    /* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {...}
+
+* Also note that to use React-Bootstrap with SASS, you will have to import the react-bootstrap scss file from the node_module folder into the .scss file of the project's scss file as sample shows below.
+    @import "../node_modules/bootstrap/scss/bootstrap.scss";
