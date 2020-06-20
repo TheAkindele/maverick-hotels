@@ -1,6 +1,14 @@
-export const GET_DATA = 'GET_DATA'
+export const SELECT_ROOM = 'SELECT_ROOM'
+export const GET_ROOM = 'GET_ROOM'
 
-export const getData = data => ({
-    type: GET_DATA,
-    payload: data
+export const selectRoom = room => dispatch => {
+    dispatch({
+        type: SELECT_ROOM,
+        payload: room
+    })
+}
+
+export const getRoom = room => ({
+    type: GET_ROOM,
+    payload: room
 })

@@ -11,7 +11,7 @@ class NavBar extends Component {
         this.setState({
             isOpen: !this.state.isOpen
         })
-        console.log('state= ', this.state)
+        //console.log('state= ', this.state)
     }
 
     render() {

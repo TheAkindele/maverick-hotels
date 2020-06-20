@@ -9763,6 +9763,12 @@ a:hover {
   }
 }
 
+/*********** Homepage ************/
+.homepage {
+  width: 100vw;
+  background-color: tomato;
+}
+
 /*********HomeCarousel******************/
 .home-carousel {
   text-transform: capitalize;
@@ -9818,29 +9824,39 @@ a:hover {
 }
 
 .featured-rooms {
-  padding: 40px 20px;
+  width: 100vw;
+  padding-bottom: 40px;
+  background-color: white;
 }
 
 .featured-rooms .title-box {
   text-align: center;
-  padding: 20px 0;
-}
-
-.featured-rooms .rooms {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding: 20px 0;
-}
-
-.featured-rooms .rooms .room {
+  width: 100%;
+  padding: 25px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px 20px;
-  position: relative;
+  align-items: center;
 }
 
-.featured-rooms .rooms .room .price {
+.featured-rooms .rooms {
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.featured-rooms .rooms .rooms-sample {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0 10px;
+}
+
+.featured-rooms .rooms .rooms-sample .price {
   padding: 10px;
   border-radius: 0 0 20px 0;
   color: white;
@@ -9851,30 +9867,44 @@ a:hover {
   left: 0;
 }
 
-.featured-rooms .rooms .room .image {
+.featured-rooms .rooms .rooms-sample .image {
   height: 85%;
+  width: 100%;
 }
 
-.featured-rooms .rooms .room .image img {
+.featured-rooms .rooms .rooms-sample .image img {
   width: 100%;
   height: 100%;
 }
 
-.featured-rooms .rooms .room .image img:hover {
+.featured-rooms .rooms .rooms-sample .image img:hover {
   opacity: 60%;
 }
 
-.featured-rooms .rooms .room .foot {
-  background-color: grey;
+.featured-rooms .rooms .rooms-sample .foot {
+  background-color: brown;
   text-align: center;
   height: 15%;
+  width: 100%;
+  color: white;
 }
 
-.featured-rooms .rooms .room .foot h6 {
+.featured-rooms .rooms .rooms-sample .foot h6 {
   padding: 5px;
   text-transform: capitalize;
 }
 
+/*
+.room{
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 10px 20px;
+            position: relative;
+            border: 1px solid blue;
+            //transition: opacity 0.5s;
+*/
 .flips {
   width: 100%;
   height: 60vh;
@@ -10067,7 +10097,6 @@ a:hover {
 .rooms-list-container .room-list {
   margin: 0 auto;
   width: 90%;
-  padding: 25px 15px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   background: grey;
@@ -10119,4 +10148,95 @@ a:hover {
 .rooms-list-container .room-list .room .foot h6 {
   padding: 5px;
   text-transform: capitalize;
+}
+
+.room {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.room .top {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid red;
+}
+
+.room .top .center {
+  width: 45%;
+  height: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: darkgrey;
+  text-transform: capitalize;
+  padding: 20px 0;
+  opacity: 80%;
+  font-weight: bolder;
+}
+
+.room .top .center .room-type {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: red;
+}
+
+.room .top .center .back {
+  background: brown;
+  color: yellow;
+  padding: 10px 15px;
+}
+
+.room .middle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 35vh;
+  width: 85%;
+  margin: 0 auto;
+  border: 1px solid blue;
+}
+
+.room .middle img {
+  width: 45%;
+  height: 85%;
+  margin: 0 15px;
+}
+
+.room .bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: nill;
+  width: 85%;
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.room .bottom .details {
+  width: 60%;
+  border: 1px solid tomato;
+}
+
+.room .bottom .info {
+  width: 30%;
+  border: 1px solid green;
+}
+
+.room .bottom .info .features {
+  list-style: none;
+  font-weight: bold;
+  padding: 10px 0;
 }

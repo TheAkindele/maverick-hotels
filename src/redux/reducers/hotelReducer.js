@@ -1,14 +1,28 @@
 import { homeCarousel, roomsCarousel, hotelRoomsData } from '../../hotelData'
-//import { GET_DATA } from '../actions/hotelActions'
+import { SELECT_ROOM, GET_ROOM } from '../actions/hotelActions'
 
 const initialState = {
     roomsData: hotelRoomsData,
+    pickedRooms: hotelRoomsData,
     homeCarousel,
     roomsCarousel
 }
 
 const hotelReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SELECT_ROOM:
+            console.log('clicked room ', action.payload)
+            return ({
+                ...state,
+                pickedRooms: action.payload
+            })
+
+        case GET_ROOM:
+            console.log('room result')
+            return ({
+                ...state,
+                pickedRooms: action.payload
+            })
 
         default:
             return state
@@ -16,11 +30,3 @@ const hotelReducer = (state = initialState, action) => {
 }
 
 export default hotelReducer
-
-/*
-case GET_DATA:
-            return {
-                ...state,
-                homeCarousel: action.payload
-            }
-*/
