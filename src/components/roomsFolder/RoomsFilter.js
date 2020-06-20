@@ -5,88 +5,63 @@ import RoomsList from './RoomsList'
 
 class RoomsFilter extends Component {
     state = {
-        rooms: [],
-        filteredRooms: [],
-        guestLimit: 1,
-        price: 0
-    }
-
-    //static getDerivedStateFromProps(props, state) {
-    //    return { rooms: props.roomsData }
-    //}
-    componentDidMount() {
-        this.setState({
-            rooms: this.props.roomsData
-        })
+        rooms: this.props.roomsData,
+        filteredRooms: ''
     }
 
     handleFilter = (e) => {
-        const { roomsData } = this.props
-        const { value, name } = e.target
-        console.log('name= ', name)
-        console.log('the value= ', value)
+        const { rooms } = this.state
+        //const { roomsData } = this.props
+        const { value } = e.target
 
         //// Room type
         if (isNaN(value) && value !== 'all') {
-            const roomFilter = roomsData.filter(rooms => (
+            const roomFilter = rooms.filter(rooms => (
                 rooms.roomType === value
             ))
-            console.log('room type= ', roomFilter)
+            //console.log('room type= ', roomFilter)
             this.setState({
                 //...this.state,
-                rooms: roomFilter
+                filteredRooms: roomFilter
             })
         }
         else if (value === 'all') {
             this.setState({
-                rooms: roomsData
+                filteredRooms: rooms
             })
         }
 
         ///To set gues limit
         else if (value.toString().length === 1 && value > 0) {
-            const roomFilter = roomsData.filter(room => (
+            const roomFilter = rooms.filter(room => (
                 room.guestLimit >= value
             ))
-            console.log('guest limit= ', roomFilter)
             this.setState({
-                rooms: roomFilter
+                filteredRooms: roomFilter
             })
         }
 
         ///To set price
         else if (parseInt(value) !== 0) {
-            const roomFilter = roomsData.filter(room => (
+            const roomFilter = rooms.filter(room => (
                 room.price === parseInt(value)
             ))
-            console.log('room price= ', roomFilter)
             this.setState({
-                rooms: roomFilter
-            })
-        }
-
-        // To check for breakfast
-        else if (value = true && value === 'false') {
-            const roomFilter = roomsData.filter(room => (
-                room.breakfast === 'true'
-            ))
-            console.log('breakfast= ', roomFilter)
-            this.setState({
-                rooms: roomFilter
+                filteredRooms: roomFilter
             })
         }
 
         else {
-            const roomFilter = roomsData
-            console.log('else= ', roomFilter)
+            const roomFilter = rooms
             return this.setState({
-                rooms: roomFilter
+                filteredRooms: roomFilter
             })
         }
     }
 
     render() {
-        console.log('mounted state= ', this.state.rooms)
+        //console.log('rooms = ', this.state.rooms)
+        //console.log('filtered= ', this.state.filteredRooms)
         const { guestLimit } = this.state
         return (
             <div className='room-filter'>
@@ -110,19 +85,6 @@ class RoomsFilter extends Component {
                             <input type="range" name="guest" id="guest" defaultValue={1} min='1' max='5' step='1' onChange={this.handleFilter} />
                         </div>
 
-                        <div className="check">
-                            <div className="option">
-                                <input type="checkbox" name="food" id="food" checked={false} onChange={this.handleFilter} />
-                                <label htmlFor="food">Breakfast</label>
-                            </div>
-
-                            <div className="option" onChange={this.handleFilter}>
-                                <input type="checkbox" name="wifi" id="wifi" />
-                                <label htmlFor="wifi">WiFi</label>
-                            </div>
-                        </div>
-
-
                         <div className="option-box">
                             <label htmlFor="price">Price</label>
                             <select name="price" id="price" onChange={this.handleFilter}>
@@ -139,10 +101,10 @@ class RoomsFilter extends Component {
                     </form>
                 </div>
                 <div className='rooms-show'>
-                    {this.state.rooms ?
-                        <RoomsList roomsList={this.state.rooms} />
-                        : 'no item to show'}
-
+                    {
+                        this.state.filteredRooms ? (<RoomsList theRoomsList={this.state.filteredRooms} />)
+                            : (<RoomsList theRoomsList={this.state.rooms} />)
+                    }
                 </div>
             </div>
         )
@@ -150,7 +112,6 @@ class RoomsFilter extends Component {
 }
 
 const mapStateToProps = state => {
-    //console.log('mapStateToProps ', state)
     return {
         roomsData: state.hotelReducer.roomsData
     }
