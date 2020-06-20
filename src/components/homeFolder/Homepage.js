@@ -6,7 +6,7 @@ import FlipCards from './FlipCards'
 
 const Homepage = () => {
     return (
-        <div>
+        <div className='homepage'>
             <HomeCarousel />
             <Services />
             <FeaturedRooms />
@@ -16,3 +16,4 @@ const Homepage = () => {
 }
 
 export default Homepage
+//

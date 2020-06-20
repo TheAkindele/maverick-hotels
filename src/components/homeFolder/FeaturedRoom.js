@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
 
 const FeaturedRooms = ({ featured }) => {
     return (
@@ -11,11 +10,11 @@ const FeaturedRooms = ({ featured }) => {
             <div className="rooms">
                 {
                     featured.map(room => (
-                        <Link to='/rooms' className="room" key={room.id}>
+                        <div key={room.id} className='rooms-sample'>
                             <h6 className="price">Prices from #{room.price}</h6>
                             <div className="image"><img src={room.imageUrl} alt='featured' /></div>
                             <div className="foot"><h6>{room.roomType}</h6></div>
-                        </Link>
+                        </div>
                     ))
                 }
             </div>
