@@ -18,11 +18,11 @@ const FeaturedRooms = ({ featured }) => {
                             featured.map(room => (
                                 <Col lg='4' xs='12' key={room.id} className='my-2'>
                                     <Card >
-                                        <Link to={`/rooms`} className='to-rooms'>
+                                        <Link to={`/rooms`} className='to-rooms' style={{ textDecoration: 'none' }}>
                                             <CardImg top width="100%" height="200px" src={room.imageUrl} alt="Card" />
-                                            <CardBody>
-                                                <CardTitle className='font-weight-bold'>{room.roomType.toUpperCase()}</CardTitle>
-                                            </CardBody>
+                                            <CardBody style={{ background: 'brown' }}>
+                                                <CardTitle className='font-weight-bold text-white'>{room.roomType.toUpperCase()}</CardTitle>
+                                            </CardBody >
                                         </Link>
                                     </Card>
                                 </Col>

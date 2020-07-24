@@ -8,3 +8,7 @@ export const FeaturedRoomsStyle = styled.div`
 export const CardboxStyle = styled.div`
     padding: 3vw 0;
 `
+
+export const Body = styled.div`
+    background: red;
+`
