@@ -1,13 +1,13 @@
 import React from 'react'
-import HomeCarousel from './HomeCarousel'
-import Services from './Services'
-import FeaturedRooms from './FeaturedRoom'
-import FlipCards from './FlipCards'
+import HomepageCarousel from '../carousel-folder/Carousel'
+import Services from '../services-folder/Services'
+import FeaturedRooms from '../featured-folder/FeaturedRoom'
+import FlipCards from '../flipcard-folder/FlipCards'
 
 const Homepage = () => {
     return (
         <div className='homepage'>
-            <HomeCarousel />
+            <HomepageCarousel />
             <Services />
             <FeaturedRooms />
             <FlipCards />
