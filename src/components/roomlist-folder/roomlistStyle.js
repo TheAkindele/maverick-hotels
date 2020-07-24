@@ -1,6 +1,6 @@
-import Styled from 'styled-components'
+import styled from 'styled-components'
 
-export const ListContainerStyle = Styled.div`
+export const ListContainerStyle = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -9,6 +9,22 @@ export const ListContainerStyle = Styled.div`
     padding: 2vw 0;
 `
 
-export const ListStyle = Styled.div`
+export const ListStyle = styled.div`
     width: 90%;
+`
+
+export const CardPrice = styled.div`
+    padding: 10px;
+    background: black;
+    color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    @media (max-width: 760px) {
+        font-size: 0.8rem;
+        t-weight: 300;
+    }
 `
