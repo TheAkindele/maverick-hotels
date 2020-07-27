@@ -26,9 +26,6 @@ class NavBar extends Component {
                                 <NavItem>
                                     <NavLink href="/rooms" className='text-warning font-weight-bold'>Rooms</NavLink>
                                 </NavItem>
-                                <NavItem>
-                                    <NavLink href="/contact" className='text-warning font-weight-bold'>Contact</NavLink>
-                                </NavItem>
                             </Nav>
                         </Collapse>
                     </Container>
