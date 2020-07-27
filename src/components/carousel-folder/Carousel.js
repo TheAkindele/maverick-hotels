@@ -12,11 +12,17 @@ class HomepageCarousel extends Component {
 
 
     onExiting = () => {
-        this.state.animating = true;
+        //this.state.animating = true;
+        this.setState({
+            animating: true
+        })
     }
 
     onExited = () => {
-        this.state.animating = false;
+        //this.state.animating = false;
+        this.setState({
+            animating: false
+        })
     }
 
     next = () => {
